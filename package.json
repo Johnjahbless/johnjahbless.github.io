@@ -1,0 +1,32 @@
+{
+  "name": "geo-search",
+  "version": "1.0.0",
+  "description": "DevC Foundation Track Capstone Project",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon ./src/app.js",
+    "test": "npm test",
+    "prestart": "esw src",
+    "localtunnel": "lt -port 3000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Johnjahbless/Geo-Search.git"
+  },
+  "author": "John Kolo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Johnjahbless/Geo-Search/issues"
+  },
+  "homepage": "https://github.com/Johnjahbless/Geo-Search#readme",
+  "dependencies": {
+    "ejs": "^2.7.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-watch": "^6.0.1",
+    "nodemon": "^1.19.4"
+  }
+}
