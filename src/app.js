@@ -14,4 +14,9 @@ app.get('/', (req, res) => {
     res.render('index');
   });
 
+
+  app.get('/search', (req, res) => {
+    res.render('search');
+  });
+
   app.listen(3000, ()=> console.log('Geo-Search project running on port 3000'));

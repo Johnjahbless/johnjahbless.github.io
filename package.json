@@ -7,7 +7,7 @@
     "start": "nodemon ./src/app.js",
     "test": "npm test",
     "prestart": "esw src",
-    "localtunnel": "lt -port 3000 --subdomain john"
+    "localtunnel": "lt -port 3000 -subdomain john"
   },
   "repository": {
     "type": "git",
