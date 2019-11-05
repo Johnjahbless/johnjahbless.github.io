@@ -1,7 +1,8 @@
 <%- include('header') %>
+
 <form method="POST" action="/search">
     <div class="card2">
-        <img src="./public/images/favicon.png" alt="Avatar">
+        <img src="images/favicon.png" alt="Avatar" width="50px" height="50px">
         <div class="list">
           <h4><b>Convert</b></h4>
           <div class="input-field first-wrap">
@@ -9,7 +10,6 @@
                 <select data-trigger="" name="choices-single-defaul">
                   <option>Celsius</option>
                   <option>Ferenheit</option>
-
                 </select>
               </div>
             </div>
@@ -20,7 +20,6 @@
           </div>
           </div>
           <p><h2><b>099</b></h2></p>
-
           <button name="submit" id="submit" class="btn-search" type="button">Convert</button>
         </div>
       </div>
@@ -45,7 +44,7 @@
           </div>
         </div>
         <div class="input-field second-wrap">
-          <input id="search" type="text" placeholder="Enter Keywords?" />
+          <input id="search" name="search" type="text" placeholder="Enter Keywords?" />
         </div>
         <div class="input-field third-wrap">
           <button class="btn-search" type="button">
@@ -58,10 +57,13 @@
     </form>
 </section>
 
+<div>
 
+  <p id="demo"> testing</p>
+</div>
 <aside>
     <div class="card">
-        <img src="./public/images/favicon.png" alt="Avatar">
+        <img src="images/favicon.png" alt="Avatar" width="50px" height="50px">
         <div class="list">
           <h4><b>Temperature</b></h4>
           <p>30%</p>
@@ -76,9 +78,9 @@
         </div>
       </div>
 
-
 </aside>
-  <script src="../js/extensions/choices.js"></script>
+
+  <script src="../js/choices.js"></script>
   <script>
     const choices = new Choices('[data-trigger]',
     {
@@ -87,8 +89,7 @@
     });
 
   </script>
-
-
-
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?&key=AIzaSyB-ynEemTzMxgwyh7Ev3xmK6Y4igV1d9hs"></script>
 <script src="../js/index.js"></script>
+
 <%- include('footer') %>
