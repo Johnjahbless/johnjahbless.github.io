@@ -1,6 +1,6 @@
 
 let x = document.getElementById("demo");
-/* eslint-disable no-unused-vars */
+/* eslint-disable no-unused-vars, no-undef*/
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition, showError);
@@ -18,6 +18,22 @@ function showPosition(position) {
   //document.getElementById("map").innerHTML = "<img src='"+img_url+"'>";
   document.body.style.backgroundImage = "url('"+img_url+"')";
   GetAddress(position.coords.latitude, position.coords.longitude)
+  GetWeatherData(position.coords.latitude, position.coords.longitude);
+}
+
+const GetWeatherData = (lat, lon) => {
+    fetch("http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&APPID=c7cd3d81c07d4766b537d3c72d2a1c40")
+        .then(response => response.json())
+        .then(data => {
+
+            console.log(data);
+            document.getElementById('temp').innerHTML = data.main.temp;
+            document.getElementById('pres').innerHTML = data.main.pressure;
+            document.getElementById('hum').innerHTML = data.main.humidity;
+            document.getElementById('wind').innerHTML = data.wind.speed;
+
+        });
+
 }
 function GetAddress(lat, lng) {
   //var lat = parseFloat(document.getElementById("txtLatitude").value);
@@ -32,6 +48,19 @@ function GetAddress(lat, lng) {
           }
       }
   });
+}
+
+const getCoordinates = () => {
+  let myAddress = document.getElementById('search').value;
+  if(myAddress != null){
+  var geocoder = new google.maps.Geocoder();
+geocoder.geocode({
+    "address": myAddress
+}, function(results) {
+    console.log(results[0].geometry.location); //LatLng
+    showPosition(results[0].geometry.location);
+});
+}
 }
 
 function showError(error) {
