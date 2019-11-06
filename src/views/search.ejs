@@ -7,7 +7,7 @@
           <h4><b>Convert</b></h4>
           <div class="input-field first-wrap">
               <div class="input-select">
-                <select data-trigger="" name="choices-single-defaul">
+                <select data-trigger="" id="choices" name="choices-single-defaul">
                   <option>Celsius</option>
                   <option>Ferenheit</option>
                 </select>
@@ -16,10 +16,10 @@
           <p></p>
           <div class="input-field first-wrap">
               <div class="input-select">
-          <input id="cel" name = "cel" type="text" placeholder="0.00"/>
+          <input id="inputNum" name = "inputNum" type="number" placeholder="0.00"/>
           </div>
           </div>
-          <p><h2><b>099</b></h2></p>
+          <p><h2 id="total"><b>099</b></h2></p>
           <button name="submit" id="submit" class="btn-search" type="button">Convert</button>
         </div>
       </div>
@@ -65,6 +65,8 @@
     <div class="card">
         <img src="images/favicon.png" alt="Avatar" width="50px" height="50px">
         <div class="list">
+            <h4><b>Weather condition</b></h4>
+            <p id="current"></p>
           <h4><b>Temperature</b></h4>
           <p id="temp"></p>
           <h4><b>Pressure</b></h4>
@@ -73,8 +75,7 @@
           <p id="hum"></p>
           <h4><b>Wind Speed</b></h4>
           <p id="wind"></p>
-          <h4><b>Temperature</b></h4>
-          <p>30%</p>
+
         </div>
       </div>
 

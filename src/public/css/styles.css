@@ -24,7 +24,9 @@ body{
   max-width: 400px;
   min-width: 300px;
   transition: 0.3s;
+  margin-top: -10em;
   float: right;
+  background-color: azure;
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -46,6 +48,7 @@ img {
   max-width: 400px;
   transition: 0.3s;
   float: left;
+  background-color: azure;
 }
 
 #map {

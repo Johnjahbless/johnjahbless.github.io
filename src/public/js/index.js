@@ -1,5 +1,9 @@
 
 let x = document.getElementById("demo");
+let inputNum = document.getElementById("inputNum");
+let selectedChoices = document.getElementById("choices");
+let total = document.getElementById("total");
+let selected = "Celsius", result;
 /* eslint-disable no-unused-vars, no-undef*/
 function getLocation() {
   if (navigator.geolocation) {
@@ -31,6 +35,8 @@ const GetWeatherData = (lat, lon) => {
             document.getElementById('pres').innerHTML = data.main.pressure;
             document.getElementById('hum').innerHTML = data.main.humidity;
             document.getElementById('wind').innerHTML = data.wind.speed;
+            document.getElementById('current').innerHTML = data.weather[0].description;
+            //let resuts = data.weather[0];
 
         });
 
@@ -77,5 +83,22 @@ function showError(error) {
     case error.UNKNOWN_ERROR:
       x.innerHTML = "An unknown error occurred."
       break;
+  }
+}
+selectedChoices.oninput = function() {
+  selected = selectedChoices.options[selectedChoices.selectedIndex].value;
+
+  if(selected == "Celsius"){
+    total.innerHTML = result;
+      }else if(selected == "Ferenheit"){
+
+      }
+}
+inputNum.oninput = function () {
+  result = this.value;
+  if(selected == "Celsius"){
+total.innerHTML = result;
+  }else if(selected == "Ferenheit"){
+
   }
 }
