@@ -4,7 +4,7 @@ let inputNum = document.getElementById("inputNum");
 let selectedChoices = document.getElementById("choices");
 let total = document.getElementById("total");
 let selected = "Celsius", result;
-/* eslint-disable no-unused-vars, no-undef*/
+/* eslint-disable no-unused-lets, no-undef, no-empty*/
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition, showError);
@@ -15,9 +15,9 @@ function getLocation() {
 function showPosition(position) {
   x.innerHTML = "Latitude: " + position.coords.latitude +
   "<br>Longitude: " + position.coords.longitude;
-  var latlon = position.coords.latitude + "," + position.coords.longitude;
+  let latlon = position.coords.latitude + "," + position.coords.longitude;
 
-  var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=12&size=1000x2000&scale=4&maptype=roadmap&markers=color:blue|label:Y|"+latlon+"&key=AIzaSyB-ynEemTzMxgwyh7Ev3xmK6Y4igV1d9hs";
+  let img_url = "https://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=12&size=1000x2000&scale=4&maptype=roadmap&markers=color:blue|label:Y|"+latlon+"&key=AIzaSyB-ynEemTzMxgwyh7Ev3xmK6Y4igV1d9hs";
 
   //document.getElementById("map").innerHTML = "<img src='"+img_url+"'>";
   document.body.style.backgroundImage = "url('"+img_url+"')";
@@ -42,10 +42,10 @@ const GetWeatherData = (lat, lon) => {
 
 }
 function GetAddress(lat, lng) {
-  //var lat = parseFloat(document.getElementById("txtLatitude").value);
-  //var lng = parseFloat(document.getElementById("txtLongitude").value);
-  var latlng = new google.maps.LatLng(lat, lng);
-  var geocoder = geocoder = new google.maps.Geocoder();
+  //let lat = parseFloat(document.getElementById("txtLatitude").value);
+  //let lng = parseFloat(document.getElementById("txtLongitude").value);
+  let latlng = new google.maps.LatLng(lat, lng);
+  let geocoder = geocoder = new google.maps.Geocoder();
   geocoder.geocode({ 'latLng': latlng }, function (results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
           if (results[1]) {
@@ -59,7 +59,7 @@ function GetAddress(lat, lng) {
 const getCoordinates = () => {
   let myAddress = document.getElementById('search').value;
   if(myAddress != null){
-  var geocoder = new google.maps.Geocoder();
+  let geocoder = new google.maps.Geocoder();
 geocoder.geocode({
     "address": myAddress
 }, function(results) {
