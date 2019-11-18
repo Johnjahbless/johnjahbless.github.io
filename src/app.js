@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const PORT = process.env.PORT || 3000
 
 const app = express();
 
@@ -15,8 +16,4 @@ app.get('/', (req, res) => {
   });
 
 
-  app.get('/search', (req, res) => {
-    res.render('search');
-  });
-
-  app.listen(3000, ()=> console.log('Geo-Search project running on port 3000'));
+  app.listen(PORT, ()=> console.log(`Geo Search project running on port  ${PORT}`));

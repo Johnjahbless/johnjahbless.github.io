@@ -4,6 +4,15 @@ body{
   width: 100%;
 }
 
+/* header */
+.header .logo {
+  font-size: 0.85em;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #2a419f;
+  font-weight: 600;
+}
+
 #copy{
   background-color: black;
   color: antiquewhite;
